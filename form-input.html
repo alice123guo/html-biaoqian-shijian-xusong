@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form中常见的input标签</title>
+  </head>
+  <body>
+    <div>
+      <h3>一、作用：让用户输入内容</h3>
+      <h3>
+        二、属性，①类型type：button/checkbox/email/file/hidden/password/radio/search/submit/tel/text
+        ②其他name： autofocus/ checked/ disabled/maxlength/pattern/ value/
+        placeholder
+      </h3>
+      <h3>三、事件：onchange/onfocus/onblur</h3>
+      <ol>
+        <li>下面的input都有一个onchange事件</li>
+        <li>鼠标集中在它身上的时候就会发生Onfocus事件</li>
+        <li>鼠标出来的时候就会触发onblur事件</li>
+      </ol>
+      <h3>四、验证器HTML5新增功能（js中讲，html5自带验证器）</h3>
+      <h3>注意事项</h3>
+      <ol>
+        <li>一般不监听input的click事件</li>
+        <li>form里面的input要有name</li>
+        <li>form里面要有一个type=submit才能</li>
+        出发submit事件
+      </ol>
+    </div>
+    <pre>下面是正文内容 <hr> </pre>
+    <form action="/yyy" method="post" autocomplete="on" target="a">
+      <input type="text" /> <br />注：这就是个普通的文本
+      <hr />
+      <input type="color" /><br />注：这是个颜色
+      <hr />
+      <input type="password" />
+      <br />注：不展示具体内容，只展示一个小圆点
+      <hr />
+      <input type="radio" />男<input type="radio" />女 <br />注：单选
+      <hr />
+      <input name="gender" type="radio" />男
+      <input name="gender" type="radio" />女
+      <br />注：想要二选一需要让男和女有同一个name，让两个input的name是同一个字符串就只能二选一了
+      <hr />
+      <input name="hobby" type="checkbox" />唱
+      <input name="hobby" type="checkbox" />跳
+      <input name="hobby" type="checkbox" />rap
+      <br />注：多选;如果页面上很多checkbox要想把这几个checkbox变成一组需要给他们一个同样的name
+      <hr />
+      <input type="file" />
+      <br />注：选择文件：如何上传头像或其他文件只能选择一个
+      <hr />
+      <input type="file" multiple />
+      <br />注：想选择多个文件加一个 multiple
+      <hr />
+      <input type="hidden" />
+      <br />注：hidden隐藏，这里面是有内容的，一般hidden都是给机器输入的，不是给用户看的
+      <hr />
+      <textarea></textarea>
+      <br />注：上面的都是单行文本，texearea是多行文本（右下角可拖动）
+      <hr />
+      <hr />
+      <textarea style="resize: none; width: 50%; height: 100px"></textarea>
+      <br />注：texearea右下角不可拖动：用css实现,不加宽度和高度也可以的
+      <hr />
+      <select>
+        <option value="1">——请选择——</option>
+        <option value="2">周一</option>
+        <option value="3">周二</option>
+      </select>
+      <br />注：select+option选择，value是真正的值，周一周二是给用户看的值
+      <hr />
+      <button type="submit">
+        <strong>搞起</strong>
+      </button>
+    </form>
+  </body>
+</html>

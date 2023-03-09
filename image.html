@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>img标签</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <ol>
+      <li><strong> img标签作用：发出get请求，展示一张图片</strong></li>
+      <li>属性：alt/height/width/src</li>
+      <li>事件：onload/onerror,监听图片是否加载成功</li>
+      <li>响应式：max-width:100%</li>
+      <li><strong>可替换元素：考试会问概率30%</strong></li>
+    </ol>
+    <hr />
+    <h2>height/width只写宽度或者是高度，另外一个会自适应</h2>
+    <div>
+      <img width="400" src="dog.png" alt="一只狗子" />
+      <pre></pre>
+      <h2>alt下面这个写法是让图片加载失败;</h2>
+      如果没有alt="加载失败的狗子，用户只能看到一张裂开的图片，也不知道说明东西没加载出来
+      <pre></pre>
+      <img src="123.png" alt="加载失败的狗子" />
+    </div>
+    <hr />
+    <h2>onload/onerror</h2>
+    <div>
+      <img id="xxx" width="400" src="dog1.png" alt="onload和onerror" />
+      <script>
+        xxx.onload = function () {
+          console.log("图片加载成功");
+        };
+        xxx.onerror = function () {
+          console.log("图片加载失败");
+          xxx.src = "/404.png";
+        };
+      </script>
+    </div>
+    <hr />
+    <h2>响应式：max-width</h2>
+    <div>
+      想让这张图片适应手机屏幕，首先再上面加style，把外边距变成0，boxsizing变成border-box;然后再把图片的最大宽度变成100%
+      <img src="超级大的一张图.png" alt="想让这张图片适应手机屏幕" />
+    </div>
+  </body>
+</html>

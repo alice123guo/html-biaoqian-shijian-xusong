@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>a的href属性</title>
+  </head>
+  <body>
+    <h1>a的href属性作用</h1>
+    <div>
+      <ol>
+        <li>跳转外部页面</li>
+        <li>跳转内部锚点</li>
+        <li>跳转到邮箱或电话</li>
+      </ol>
+    </div>
+
+    <h2>作用1网址</h2>
+    <div>
+      <!-- 只要是链接网站的，都直接用//+网站 -->
+      <a href="//baidu.com">百度超链接</a> <br />
+
+      <!-- 链接c.html -->
+    </div>
+
+    <h2>作用2路径</h2>
+    <div>
+      /a绝对路径：这个地方/a为什么不是根目录而是相对路径？答：如果开启的是Http服务，那他就不是硬盘的根目录，在哪开的服务就是哪个文件的根目录,在本例中表示html-demo-2为根目录，因此不能直接双击打开网站，双击打开的根目录为整个硬盘的根目录
+      <a href="/a/b/c.html">c.html绝对路径</a>
+      <br />
+      相对路径a/，在当前html-demo-2目录里面找a>b>c.html
+      <a href="a/b/c">c.html相对路径</a>
+      <br />
+      链接index.html:
+      <a href="index.html">我是index.html</a>
+      或者写成：<a href="./index.html">我也是index.html.html</a> <br />
+    </div>
+
+    <h2>作用3伪协议</h2>
+    <div>
+      <!-- 下面这个现在基本上不用了 -->
+      <a href="javascript:alert(1);">JavaScript伪协议</a>
+      <br />
+      下面这个效果是点击链接以后什么都不发生，不会刷新页面，把javascript:;改成空的不行会自动刷新，改成#也不行会自动回滚到最顶部，
+      <a href="javascript:;">空的伪协议：查看按钮</a>
+      <br />
+      <a href="mailto:guoxinyaya@163.com">发邮件给郭</a>
+      <a href="tel:18613080186">给郭打电话</a> <br />
+    </div>
+
+    <h2>作用4href里面还可以加id：id=#xxx</h2>
+    <div>
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+      <p>6</p>
+      <p>7</p>
+      <p>8</p>
+      <p>9</p>
+      <p id="xxx">10</p>
+      <p>11</p>
+      <p>12</p>
+      <p>13</p>
+      <p>14</p>
+      <p>15</p>
+      <p>16</p>
+      <p>17</p>
+      <p>18</p>
+      <p>19</p>
+      <p>20</p>
+      <a href="#xxx">查看xxx</a>
+    </div>
+  </body>
+</html>

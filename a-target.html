@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>target的取值</title>
+  </head>
+  <body>
+    <h1>target的取值</h1>
+    <a href="http://baidu.com" target="_blank">blank在新页面打开</a>
+    <a href="http://baidu.com" target="_self">self在当前页面打开</a>
+    <a href="http://baidu.com" target="_top">top在最顶层页面打开</a><br />
+    top在最顶层页面打开，但是现在跟self效果一样，需要引入iframe文件才能理解
+    <!-- 下面这个div是引入iframe -->
+    <div>
+      <iframe
+        width="500"
+        height="500"
+        src="a-target-iframe.html "
+        frameborder="0"
+      ></iframe>
+    </div>
+
+    <hr />
+    <h1>target=xxx，window.name写窗口的名字</h1>
+    <div>
+      xxx和target
+      有区别，但是需要在两个链接的时候表现出来，xxx两个页面会在一个窗口打开，腾讯会覆盖百度窗口：如果没有叫xxx的窗口就创建一个，如果有的话后面所有的网页都在xxx打开<br />
+      <a href="http://baidu.com" target="xxx">xxx百度</a>
+      <a href="http://qq.com" target="xxx">xxx腾讯</a>
+      <a href="http://iqiyi.com" target="yyy">yyy爱奇艺</a>
+    </div>
+    <h1>target=xxx，iframe.name写iframe的名字</h1>
+    <br />
+    xxx在左边窗口打开，yyy在右边窗口打开
+    <iframe src="" name="xxx"></iframe>
+    <iframe src="" name="yyy"></iframe>
+  </body>
+</html>

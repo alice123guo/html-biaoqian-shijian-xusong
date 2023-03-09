@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table标签</title>
+    <style>
+      table {
+        border-spacing: 0;
+        /* 中间没有空隙 */
+        border-collapse: collapse;
+        /* 上面这两行代码是把表格合并，如果想不合并的话把collapse这行删除，上面的spacing改成10px或其他 */
+        width: 300px;
+        table-layout: auto;
+        /* auto是默认值，会自动计算每一个横竖排的宽和高,宽度取决于单元格的内容,也就是字多的比较宽
+fixed:某一列的宽度可以不一样，表格和列的宽度通过表格的宽度来设置，某一列的宽度仅仅由该列首行的单元格决定 */
+      }
+      td,
+      th {
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    table标签里面只有thead-tbody-tfoot三个标签，tr不可以放在table标签里面
+    tr:table row;table里面的一行<br />
+    th:table head 表头 <br />
+    td:table data 数据<br />
+    <pre></pre>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>英应ying语</th>
+            <th>翻译</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>hyper</td>
+            <td>超级</td>
+          </tr>
+          <tr>
+            <td>target</td>
+            <td>目标</td>
+          </tr>
+          <tr>
+            <td>frame</td>
+            <td>边框，框架</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>空</td>
+            <td>空</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <hr />
+    <h1>有两个表头的表格</h1>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>小小红红</th>
+            <th>小明</th>
+            <th>小强</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>语文</th>
+            <td>61</td>
+            <td>91</td>
+            <td>85</td>
+          </tr>
+          <tr>
+            <th>数学</th>
+            <td>79</td>
+            <td>82</td>
+            <td>91</td>
+          </tr>
+          <tr>
+            <th>英语</th>
+            <td>100</td>
+            <td>98</td>
+            <td>89</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>总分</th>
+            <td>140</td>
+            <td>270</td>
+            <td>289</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <hr />
+    <h1>易错点和相关的样式</h1>
+    <ol>
+      <li>
+        直接在table里面写tr,td,这样的话浏览器会自动把文件变成tbody里面的内容
+      </li>
+      <li>thead,tbody,tfoot不需要按顺序写</li>
+    </ol>
+    <ul>
+      <li>相关的样式table-layout; 在最上面的style里面设置</li>
+      <li>
+        border-collapse,border-spacing,在style里面新加，th-td的边框，再改变边框边距看效果
+      </li>
+    </ul>
+  </body>
+</html>

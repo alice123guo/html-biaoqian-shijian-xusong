@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form标签</title>
+  </head>
+  <body>
+    <h1>
+      form表单里必须要有一个type=”submit“的，这样表单才能提交，如果不写默认为submit；如果写成button就没办法提交这个表单
+    </h1>
+    <h1>作用：发出get或post请求，然后刷新页面</h1>
+    <h1>属性：action/autocomplete自动填充/method/target</h1>
+    <h1>事件：onsubmit</h1>
+    <hr />
+    <h3>get请求</h3>
+    action控制是请求哪个页面，method="post"控制是用get还是post请求
+    <!--action相当于img中的src,问发请求往哪发，action些什么就会请求到哪个页面，因为现在没有后台程序，所以报错先不管 下面的xxx改成Yyy也是一样的查看get地址：F12/网络/选择保留日志/刷新 -->
+    <div>
+      <form action="/xxx">
+        <input type="text" />
+        <input type="submit" />
+      </form>
+      <h3>post请求</h3>
+      <form action="/yyy" method="post">
+        <input type="text" />
+        <input type="submit" />
+        <hr />
+      </form>
+      <h3>autocomplete自动填充on/off</h3>
+      <form action="/zzz" method="post" autocomplete="on">
+        <input name="username" type="text" />
+        <input type="submit" />
+        <hr />
+      </form>
+      <h3>
+        target属性：点击提交的时候会自动刷新页面，target就是选择把哪个页面变成aaa。高速浏览器我要提交到哪个页面，哪个页面要刷新
+      </h3>
+      <!-- 跟a标签里面的target一样，_blank就是在新页面打开 给引入的iframe一个名字a，那么target的地址为a，点击提交就会刷新iframe，但是因为页面是空白的所以看不到，但是其实是有内容的-->
+
+      <form action="/aaa" method="post" autocomplete="on" target="a">
+        <input name="username" type="text" />
+        <input type="submit" />
+        <br />提交到iframe里面
+        <iframe name="a" src="a-target-iframe.html" frameborder="0"></iframe>
+        <hr />
+      </form>
+    </div>
+    <hr />
+    <hr />
+    把提交改成其他的字，方法1：value="搞起"；方法2：button <br />
+    <strong>
+      input type="submit"和button
+      type="submit"区别：input里面不可以加其他的东西，button里面可以加任何东西,加图片进去都可以</strong
+    >
+    <form action="/bbb" method="post" autocomplete="on">
+      <input name="username" type="text" />
+      <input type="submit" value="搞起" />
+      <button type="submit">
+        <strong> 也是搞起</strong><img width="100" src="dog.png" alt="" />
+      </button>
+    </form>
+  </body>
+</html>
